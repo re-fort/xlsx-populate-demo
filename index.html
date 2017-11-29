@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>xlsx-populate demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <h1 class="title">xlsx-populate demo</h1>
+
+        <div class="columns">
+            <div class="column">
+                <a class="button is-primary" onclick="handleClick(1)">example1: fill in the Excel template with data</a>
+            </div>
+            <div class="column">
+                <a class="button is-link" onclick="handleClick(2)">example2: fill 10000 cells in the Excel template with data</a>
+            </div>
+            <div class="column">
+                <a class="button is-info" onclick="handleClick(3)">example3: create zip</a>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column">
+                <div class="notification">
+                    <div>
+                        <span>start time:</span>
+                        <span id="startTime"></span>
+                    </div>
+                    <div>
+                        <span>end time:</span>
+                        <span id="endTime"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="./dist/app.js"></script>
+<script type="text/javascript">
+  var excel = new Excel()
+
+  function handleClick(type) {
+    excel.download(type)
+  }
+</script>
+</body>
+</html>
